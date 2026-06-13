@@ -130,9 +130,24 @@ python main.py \
     --retriever mmrag
 ```
 
-## Reference
-- [LLaVA from haotian-liu](https://github.com/haotian-liu/LLaVA)
-- [EGTR from naver-ai](https://github.com/naver-ai/egtr)
-- [VQA from GT-Vision-Lab](https://github.com/GT-Vision-Lab/VQA)
-- [LightRAG from HKUDS](https://github.com/hkuds/lightrag)
+## References
+- [LLaVA: https://github.com/haotian-liu/LLaVA](https://github.com/haotian-liu/LLaVA)
+- [EGTR: https://github.com/naver-ai/egtr](https://github.com/naver-ai/egtr)
+- [VQA: https://github.com/GT-Vision-Lab/VQA](https://github.com/GT-Vision-Lab/VQA)
+- [LightRAG: https://github.com/hkuds/lightrag](https://github.com/hkuds/lightrag)
 
+
+## Citation
+If you find this work is useful, please cite using this BibTeX:
+
+```bibtex
+@misc{yuan2026mkgrag,
+    title={mKG-RAG: Leveraging Multimodal Knowledge Graphs in Retrieval-Augmented Generation for Knowledge-intensive VQA}, 
+    author={Xu Yuan and Liangbo Ning and Qingqing Ye and Wenqi Fan and Qing Li},
+    publisher={arXiv:2508.05318},
+    year={2026}
+}
+```
+
+## License
+The code is released under the [Apache 2.0 license](./LICENSE).
