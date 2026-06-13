@@ -1,0 +1,64 @@
+# global config
+kb_path: &kb_path_var "./data/encyclopedic-vqa/encyclopedic_kb_wiki_all.jsonl"
+
+# embed model configs
+embed-models:
+  clip_vision:
+    mode: i2i
+    embed_type: clip
+    embed_path: openai/clip-vit-large-patch14-336
+    index_path: "./data/encyclopedic-vqa/faiss/all-clip/kb_image_index.faiss"
+  clip_text:
+    mode: t2t
+    embed_type: clip
+    embed_path: openai/clip-vit-large-patch14-336
+    index_path: "./data/encyclopedic-vqa/faiss/all-clip-text/kb_text_index.faiss"
+  blip2:
+    mode: mm
+    embed_type: blip2
+    index_path: "./data/encyclopedic-vqa/faiss/all-blip2_qm/kb_mm_index.faiss"
+    embed_path: blip2_qm_retriever
+  nomic_vision:
+    mode: i2i
+    embed_type: nomic
+    embed_path: nomic-ai/nomic-embed-vision-v1.5
+    index_path: "./data/encyclopedic-vqa/faiss/all-nomic/kb_image_index.faiss"
+  nomic_text:
+    mode: t2t
+    embed_type: nomic
+    embed_path: nomic-ai/nomic-embed-text-v1.5
+    index_path: "./data/encyclopedic-vqa/faiss/all-nomic-text/kb_text_index.faiss"
+
+# retriever configs
+oracle:
+  kb_path: *kb_path_var
+  params:
+    top_k: 1
+    return_type: article
+
+embed:
+  kb_path: *kb_path_var
+  image_dir: "./data/encyclopedic-vqa/kb_images_640"
+  model: clip_vision
+  batch_size: 128
+  resume: false
+  use_caption: false
+  params:
+    top_k: 60
+    return_doc: false
+
+mmrag:
+  kb_path: *kb_path_var
+  rag_dir: "./data/encyclopedic-vqa/envqa_test/mkg-rag"
+  scene_graph_dir: "./data/encyclopedic-vqa/scene_graph/envqa"
+  id_to_docurl: "./working_dir/context/embed_envqa_test_context_None.json"
+  llm_model_name: "meta-llama/Llama-3.2-11B-Vision-Instruct"
+  use_mm_embedding: false
+  params:
+    retrieve_from_dynamic_graph: true
+    strategy: image
+    mode: hybrid
+    doc_top_k: 10
+    top_k: 10
+    traverse_hop: 1
+    context_mode: hybrid

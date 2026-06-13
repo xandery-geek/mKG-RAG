@@ -1,0 +1,11 @@
+envqa:
+  data_dir: "./data/encyclopedic-vqa"
+  inat21_dir: "./data/iNaturalist/vqa"
+  gldv2_dir: "./data/GLDv2/vqa"
+infoseek:
+  data_dir: "./data/infoseek"
+  image_dir: "./data/oven/vqa"
+  pick_number: null
+infoseek-eval:
+  infoseek_reference_file: "./data/infoseek/evaluation/infoseek_val.jsonl"
+  infoseek_qtype_file: "./data/infoseek/evaluation/infoseek_val_qtype.jsonl"

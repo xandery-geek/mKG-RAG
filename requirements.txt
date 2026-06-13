@@ -1,0 +1,21 @@
+fairscale==0.4.13
+faiss-gpu==1.7.2
+iopath==0.1.10
+matplotlib==3.10.0
+numpy==1.26.4
+omegaconf==2.3.0
+opencv-python-headless==4.11.0.86
+peft==0.14.0
+pipmaster==1.1.13
+scipy==1.12.0
+sentencepiece==0.2.0
+tenacity==9.0.0
+timm==1.0.15
+tokenizers==0.21.2
+torch==2.6.0
+torchvision==0.21.0
+tqdm==4.67.1
+transformers==4.55.4 # required by vllm (>=4.51.1)
+# transformers==4.49.0 # required by egtr
+vllm==0.8.4 # no more than 0.8.4, otherwise it does not work with deepseek vl2
+webdataset==1.0.2
